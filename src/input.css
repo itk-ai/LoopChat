@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Define common elements */
+  section {
+    @apply mb-8;
+  }
+  p {
+    @apply mb-2;
+  }
+  .icon {
+    @apply min-h-5 min-w-5;
+  }
+  .text-link {
+    @apply text-green-900 underline;
+  }
+  .form-label {
+    @apply block my-2;
+  }
+  .form-input {
+    @apply bg-white shadow rounded block w-full p-4;
+  }
+  .form-help {
+    @apply text-sm mt-1 text-stone-600;
+  }
+  .form-btn-submit {
+    @apply bg-black text-white rounded px-6 py-3 mt-8 inline-block;
+  }
+  .form-btn-success {
+    @apply bg-green-700 text-white rounded px-6 py-3;
+  }
+  .form-btn-danger {
+    @apply bg-red-700 text-white rounded px-6 py-3;
+  }
+  .form-btn-warning {
+    @apply bg-orange-700 text-white rounded px-6 py-3;
+  }
+  button:disabled {
+    @apply bg-stone-500 text-white rounded px-6 py-3;
+  }
+  .input-active {
+    @apply border border-dotted border-orange-300;
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+  </head>
+  <body class="bg-stone-100">
+    <div class="bg-green-700">
+      <div class="container max-w-3xl mx-auto p-3 md:p-8">
+        <img src="./loop.png" alt="Loop logo">
+      </div>
+    </div>
+    <main class="container max-w-3xl mx-auto p-3 md:p-8">
+      <section>
+        <div class="flex place-items-start gap-4">
+          <h1 class="text-3xl font-light mb-8">
+            AI svar på dine spørgsmål
+          </h1>
+          <span class="bg-orange-400 px-2 py-0 rounded text-white font-xs">BETA</span>
+        </div>
+        <p>
+          Hej Jesper
+        </p>
+        <p>
+          Stil dit spørgsmål og tryk på Send. Din indsendelse gemmes online, læs <a href="./faq.html" class="text-link">hvordan og hvad der gemmes</a>.
+        </p>
+      </section>
+      <section>
+        <label class="form-label" for="name">Stil et spørgsmål</label>
+        <div class="flex gap-4 place-items-start items-start">
+          <textarea class="form-input" type="text" name="question" id="inputQuestion" placeholder="Indtast eller indtal et spørgsmål"></textarea>
+          <button id="btnStartRecording" class="form-btn-success"><img class="icon" src="./icons/microphone.svg" alt="Start indtaling"></button>
+          <button id="btnStopRecording" class="form-btn-warning hidden"><img class="icon animate-pulse" src="./icons/microphone-slash.svg" alt="Stop indtaling"></button>
+        </div>
+        <p class="form-help">Start og stop indtaling vha. knappen til højre</p>
+      </section>
+      <section>
+        <form action="./answer.html">
+          <button id="btnSendQuestion" class="form-btn-submit" disabled="disabled" >Fortsæt</button>
+          <a href="./question.html" class="px-4">Nulstil</a>
+        </form>
+      </section>
+    </main>
+    <script>
+      // This synchronous script is going to delay parsing of the DOM,
+      // so the DOMContentLoaded event is going to launch later.
+      // https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("DOM fully loaded and parsed");
+      });
+
+      const startRecording = document.getElementById("btnStartRecording");
+      const stopRecording = document.getElementById("btnStopRecording");
+      const validateInputQuestion = document.getElementById("inputQuestion");
+
+      startRecording.addEventListener("click", () => {
+        document.getElementById("btnStartRecording").classList.add("hidden");
+        document.getElementById("btnStopRecording").classList.remove("hidden");
+        validateInputQuestion.classList.add("input-active");
+      });
+
+      stopRecording.addEventListener("click", () => {
+        document.getElementById("btnStartRecording").classList.remove("hidden");
+        document.getElementById("btnStopRecording").classList.add("hidden");
+        validateInputQuestion.classList.remove("input-active");
+      });
+
+      validateInputQuestion.addEventListener("input", () => {
+        let value = inputQuestion.value;
+        value.length > 2 ? document.getElementById("btnSendQuestion").disabled = false : document.getElementById("btnSendQuestion").disabled = true;
+      });
+    </script>
+  </body>
+</html>
