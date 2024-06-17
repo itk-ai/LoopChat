@@ -17,7 +17,7 @@
     @apply text-green-900 underline;
   }
   .form-label {
-    @apply block my-2;
+    @apply block my-2 font-semibold;
   }
   .form-input {
     @apply bg-white shadow rounded block w-full p-4;
