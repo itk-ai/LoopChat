@@ -6,7 +6,7 @@ Provides simple markup for the chatinterface
 
 ## Devlopment
 
-Run `npm run watch` to watch for changes in html
+Run `npm run dev` to serve side local and watch for file changes
 
 ## Production
 
