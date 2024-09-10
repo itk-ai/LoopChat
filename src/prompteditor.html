@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <style>
+      #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-100">
+    <div class="bg-green-700">
+      <div class="container max-w-3xl mx-auto p-3 md:p-8">
+        <img src="./loop.png" alt="Loop logo">
+      </div>
+    </div>
+    <div id="test"></div>
+    <main class="container max-w-3xl mx-auto p-3 md:p-8">
+      <section>
+        <div class="flex place-items-start gap-4">
+          <h1 class="text-3xl font-light mb-8">
+            Prompt editor
+          </h1>
+          <span class="bg-blue-400 px-2 py-0 rounded text-white font-xs">ALPHA</span>
+        </div>
+      </section>
+      <section>
+        <label class="form-label" for="name">Edit the YAML for your prompt</label>
+        <div id="toolsWrapper" class="flex justify-between gap-3 top-1 right-1 z-10">
+          <div id="messages" class="mb-1">
+            <div id="messageUnsavedChanges" class="hidden bg-yellow-50 px-2 py-0 text-yellow-900 border border-yellow-200 rounded transition-all">
+              Dine ændringer er ikke gemt
+            </div>
+            <div id="messageChangesSaved" class="hidden bg-green-50 px-2 py-0 text-green-900 border border-green-200 rounded transition-all">
+              Ændringerne blev gemt
+            </div>
+            <div id="messageEditorHasErrors" class="hidden bg-red-50 px-2 py-0 text-red-900 border border-red-200 rounded transition-all">
+              Tjek koden for fejl
+            </div>
+          </div>
+          <div id="tools" class="mb-1 flex justify-end gap-1">
+            <button id="btnMinimize" class="btn-tool hidden"><i class="fa-solid fa-minimize">Undo</i></button>
+            <button id="btnMaximize" class="btn-tool"><i class="fa-solid fa-maximize">Undo</i></button>
+            <button id="btnUndo" class="btn-tool"><i class="fa-solid fa-rotate-left">Undo</i></button>
+            <button id="btnRedo" class="btn-tool"><i class="fa-solid fa-rotate-right">Redo</i></button>
+          </div>
+        </div>
+        <div class="flex gap-4 place-items-start items-start">
+          <div id="editorWrapper" class="relative border rounded-sm" style="width: 100%; height: 500px;">
+            <pre id="editor">Waiting for data to load</pre>
+          </div>
+        </div>
+        <button id="btnSave" class="hidden bg-green-600 text-white px-6 py-2 rounded mt-1 bottom-1 right-1 z-10">Gem</button>
+      </section>
+      
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
