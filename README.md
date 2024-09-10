@@ -8,7 +8,7 @@ Provides simple markup for the chatinterface
 
 Run `npm run dev` to serve site local and watch for file changes
 
-Then visit [http://localhost:8081/prompteditor.html?] to view the prompteditor
+Then visit [http://localhost:8081/prompteditor.html](http://localhost:8081/prompteditor.html) to view the prompteditor
 
 ## Production
 
