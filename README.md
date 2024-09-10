@@ -6,8 +6,11 @@ Provides simple markup for the chatinterface
 
 ## Devlopment
 
-Run `npm run dev` to serve side local and watch for file changes
+Run `npm run dev` to serve site local and watch for file changes
+
+Then visit [http://localhost:8081/prompteditor.html?] to view the prompteditor
 
 ## Production
 
 Run `npm run build` to build minified css for production
+
