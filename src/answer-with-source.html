@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+  </head>
+  <body class="bg-stone-100" id="answerWithSource">
+    <div class="bg-green-700">
+      <div id="answerWithSourceHeader" class="container max-w-3xl mx-auto p-3 md:p-8">
+        <img src="./loop.png" alt="Loop logo">
+      </div>
+    </div>
+    <div id="answerWithSourceWrapper" class="md:grid-cols-5 gap-3 container max-w-3xl mx-auto">
+      <main id="answerWithSourceMain" class="md:col-span-3 p-3 md:p-8">
+        <section>
+          <div class="flex place-items-start gap-4">
+            <h1 class="text-3xl font-light mb-8">
+              AI svar på dine spørgsmål
+            </h1>
+            <span class="bg-orange-400 px-2 py-0 rounded text-white font-xs">BETA</span>
+            <a href="#" id="btnToggleSources" class="btn-tool border px-2 py-1 ml-auto mt-2 hidden md:inline-block">Vis uddrag</a>
+          </div>
+          <p>
+            Hej Jesper
+          </p>
+          <p>
+            Stil dit spørgsmål og tryk på Send. Din indsendelse gemmes online, læs <a href="./faq.html" class="text-link">hvordan og hvad der gemmes</a>.
+          </p>
+        </section>
+        <section>
+          <label class="form-label" for="name">Stil et spørgsmål</label>
+          <div class="flex gap-4 place-items-start items-start">
+            <textarea class="form-input"  name="question" id="inputQuestion" placeholder="Indtast eller indtal et spørgsmål">Proin viverra velit a odio faucibus tristique sed sit amet libero. Pellentesque pretium pretium pellentesque. Integer pellentesque quam et sapien cursus vehi</textarea>
+            <a id="btnStartRecording" class="form-btn-success"><img class="icon" src="./icons/microphone.svg" alt="Start indtaling"></a>
+            <a id="btnStopRecording" class="form-btn-warning hidden"><img class="icon animate-pulse" src="./icons/microphone-slash.svg" alt="Stop indtaling"></a>
+          </div>
+          <p class="form-help">Start og stop indtaling vha. knappen til højre</p>
+        </section>
+        <section>
+          <div class="flex content-center">
+            <label class="form-label" for="name">Svar fra Loop</label>
+            <div class="flex ml-auto gap-2 items-center">
+              <input type="checkbox" id="checkboxReadaloud">
+              <label for="checkboxReadaloud">Læs altid svaret højt for mig</label>
+            </div>
+          </div>
+          <div class="flex gap-4 place-items-start items-start">
+            <div id="outputAnswer" class="border p-4 rounded">
+              <p>Integer condimentum erat eget ligula fringilla bibendum. Ut sem odio, commodo et lectus eget, vulputate auctor justo. Ut faucibus iaculis nibh, a pharetra nisl luctus id.</p>
+              <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a tortor nisi. Curabitur iaculis venenatis suscipit. </p>
+            </div>
+            <a id="btnStartReadAloud" class="form-btn-success"><img class="icon" src="./icons/volume.svg" alt="Start oplæsning"></a>
+            <a id="btnStopReadAloud" class="form-btn-warning hidden"><img class="icon animate-pulse" src="./icons/volume-mute.svg" alt="Stop oplæsning"></a>
+          </div>
+          <p class="form-help">Start og stop oplæsning vha. knappen til højre</p>
+        </section>
+        <section>
+          <label for="answerRating">Hvordan vil du vurdere dette svar?</label>
+          <div class="flex mt-2 gap-2" id="answerRating">
+            <button>
+              <img id="answerRating1" class="icon" src="./icons/star.svg" alt="1 stjerne">
+            </button>
+            <button>
+              <img id="answerRating2" class="icon" src="./icons/star.svg" alt="2 stjerner">
+            </button>
+            <button>
+              <img id="answerRating3" class="icon" src="./icons/star.svg" alt="3 stjerner">
+            </button>
+            <button>
+              <img id="answerRating4" class="icon" src="./icons/star.svg" alt="4 stjerner">
+            </button>
+            <button>
+              <img id="answerRating5" class="icon" src="./icons/star.svg" alt="5 stjerner">
+            </button>
+          </div>
+        </section>
+        <section>
+          <form action="./answer.html">
+            <button id="btnSendQuestion" class="form-btn-submit">Send igen</button>
+            <a href="./question.html" class="px-4">Nulstil</a>
+          </form>
+        </section>
+      </main>
+      <aside id="answerWithSourceAside" class="md:col-span-2 md:mt-5 p-3 md:p-5 bg-white md:hidden transition-all">
+        <section>
+          <label class="form-label" for="name">Svaret er baseret på følgende uddrag</label>
+          <ol class="list-decimal ml-5 flex flex-col gap-5">
+            <li>
+              <div class="flex gap-3 p-2 mb-2">
+                <!-- Snippet text -->
+                <p class="line-clamp-2">Uddrag snippet 1 tekst Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus et tempus iaculis faucibus imperdiet lectus cubilia duis integer ac morbi sagittis luctus.</p>
+                <!-- Snippet vote -->
+                <div class="ml-auto flex flex-col gap-2">
+                  <a id="btnThumbsUp" href="#" class="btn"><img class="icon" src="./icons/thumbs-up.svg" alt="Tommel op"></a>
+                  <a id="btnThumbsDown" href="#" class="btn"><img class="icon" src="./icons/thumbs-down.svg" alt="Tommel ned"></a>
+                </div>
+              </div>
+              <!-- Snippet meta -->
+              <div class="border bg-stone-50">
+                <div class="p-2 text-sm">
+                  <p class="line-clamp-2">Erat hendrerit imperdiet aliquet sollicitudin nisl magnis nunc est lorem velit lobortis montes convallis. Hac odio risus mattis justo pretium nisl vitae nam scelerisque platea nulla lacus tincidunt.</p>
+                  <p><a href="#" class="text-link">Link to the source</a></p>
+                  <p class="font-mono">4.0</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

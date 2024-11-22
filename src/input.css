@@ -10,6 +10,7 @@
   p {
     @apply mb-2;
   }
+
   .icon {
     @apply min-h-5 min-w-5;
   }
