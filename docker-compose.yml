@@ -1,0 +1,13 @@
+networks:
+  frontend:
+    external: true
+  app:
+    driver: bridge
+    internal: false
+
+services:
+  node:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - .:/app:delegated
