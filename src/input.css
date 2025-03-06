@@ -23,6 +23,9 @@
   .form-input {
     @apply bg-white shadow rounded block w-full p-4;
   }
+  .form-select {
+    @apply bg-white shadow rounded px-4 py-3;
+  }
   .form-help {
     @apply text-sm mt-1 text-stone-600;
   }

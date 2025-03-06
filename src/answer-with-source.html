@@ -38,6 +38,16 @@
           <p class="form-help">Start og stop indtaling vha. knappen til højre</p>
         </section>
         <section>
+          <label class="form-label" for="selectLM">Vælg sprogmodel</label>
+          <select class="form-select" id="selectLM">
+            <option value="0">Meta-Llama-3.1-70B-instruct</option>
+            <option value="1">Mistral</option>
+            <option value="2">ChatGPT</option>
+            <option value="3">Claude</option>
+          </select>
+          <p class="form-help">Vælg hvilken sprogmodel det skal benyttes til at behandle dit spørgsmål.</p>
+        </section>
+        <section>
           <div class="flex content-center">
             <label class="form-label" for="name">Svar fra Loop</label>
             <div class="flex ml-auto gap-2 items-center">
